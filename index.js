@@ -135,11 +135,11 @@ class SvgUri extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.isComponentMounted = true;
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.source) {
       const source = resolveAssetSource(nextProps.source) || {};
       const oldSource = resolveAssetSource(this.props.source) || {};
